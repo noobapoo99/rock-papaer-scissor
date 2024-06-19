@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>game</title>
+    <style>
+        body {
+            background-color: rgb(25, 25, 25);
+            color: white;
+            font-family: Arial;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .move-icon {
+            height: 50px;
+
+        }
+
+        .move-button {
+            background-color: transparent;
+            border: 3px solid white;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Choose your turn</p>
+    <button class="move-button js-rock-button"><img src="rock-removebg-preview.png" class="move-icon"></button>
+    <button onclick="
+    
+    playGame('paper');
+    " class="move-button"><img src="hand-removebg-preview.png" class="move-icon"></button>
+    <button onclick="
+    playGame('scissor');
+    " class="move-button"><img src="scissor-removebg-preview.png" class="move-icon"></button>
+
+    <p class="js-result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+
+    <button onclick="
+    score.wins=0;
+    score.loss=0;
+    score.tie=0;
+    localStorage.removeItem('score');
+    updateScore();
+    ">
+        reset
+    </button>
+    <button onclick="
+    autoplay();
+    ">AutoPlay</button>
+    <script src="rock.js">
+
+    </script>
+</body>
+
+</html>
